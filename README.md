@@ -6,8 +6,7 @@ It's an Amazon lambda script that receives data from Amazon CloudWatch via, then
 Just configure the javascript file and set it in Lambda, then you are good to go.
 
 ## How to Use
-### Configuration
-#### Alarm configuration
+### Alarm configuration
 In `handler.js`, you will find `ALARM_CONFIG`, which is the config for your alarms. 
 You can set different configs for different alarm conditions, depending on the 
 *subject of* the CloudWatch notification.
@@ -20,7 +19,7 @@ You can set different configs for different alarm conditions, depending on the
 | color | color of the sidebar when posted in slack | 
 | severity | Optional text indicating the severity, just displayed in the message |
 
-#### Slack configuration
+### Slack configuration
 In `handler.js`, you will find `SLACK_CONFIG`, which is the config for you Slack.
 Set the correct values in this.
 | name | description |
@@ -36,11 +35,11 @@ Then find your *Webhook URL*. The configs will be:
 https://{team}.slack.com/services/hooks/incoming-webhook?token={token}
 ```
 
-#### Amazon CloudWatch configuration
+### Amazon CloudWatch configuration
 Set whatever CloudWatch you want in your CloudWatch settings. 
 Be sure to remember the SNS topic you send the alarms to.
 
-#### Amazon Lambda configuration
+### Amazon Lambda configuration
 1. In the Lambda console panel, create a new Lambda function. Set the name to be whatever you want it to be. 
 2. For the code of the Lambda function, copy and paste the `handler.js` file. 
 3. After you have created the function, select *add event sources* for the Lambda function. 
