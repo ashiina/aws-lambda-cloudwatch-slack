@@ -22,6 +22,7 @@ You can set different configs for different alarm conditions, depending on the
 ### Slack configuration
 In `handler.js`, you will find `SLACK_CONFIG`, which is the config for you Slack.
 Set the correct values in this.
+
 | name | description |
 |:-----------|:------------|
 | token | The token for your webhook URL. | 
