@@ -18,6 +18,13 @@ var ALARM_CONFIG = [
 		mention: "<@channel> ",
 		color: "#F35A00",
 		severity: "CRITICAL"
+	},
+	{
+		condition: "ALARM",
+		channel: "#cloudwatch",
+		mention: "<@channel> ",
+		color: "#F35A00",
+		severity: "CRITICAL"
 	}
 ];
 
