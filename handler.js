@@ -1,4 +1,4 @@
-console.log('[Amazon CloudWatch Notification]');
+console.log(' [Amazon CloudWatch Notification]');
 
 /*
  configuration for each condition.
