@@ -1,4 +1,4 @@
-# lambda-cloudwatch-slack
+#  lambda-cloudwatch-slack
 Amazon Lambda to receive alerts from CloudWatch and post to Slack.
 
 ## What is This?

@@ -6,23 +6,24 @@ console.log('[Amazon CloudWatch Notification]');
 */
 var ALARM_CONFIG = [
 	{
-		condition: "INFO",
-		channel: "#test",
-		mention: " ",
-		color: "#FF9F21",
+		condition: "OK",
+		channel: "#cloudwatch",
+		mention: "<@here>",
+		color: "#21ff9f",
 		severity: "INFO"
 	},
 	{
-		condition: "CRITICAL",
-		channel: "#general",
-		mention: "<@channel> ",
+		condition: "ALARM",
+		channel: "#cloudwatch",
+		mention: "<@here>",
 		color: "#F35A00",
 		severity: "CRITICAL"
 	}
+	
 ];
 
 var SLACK_CONFIG = {
-	path: "YOUR_PATH",
+	path: "/YOUR_PATH",
 };
 
 var http = require ('https');
@@ -41,10 +42,9 @@ exports.handler = function(event, context) {
 	var color;
 
 	// create post message
-	var alarmMessage = " *[Amazon CloudWatch Notification]* \n"+
-	"Subject: "+subject+"\n"+
-	"Message: "+message+"\n"+
-	"Timestamp: "+timestamp;
+	var s1 = subject.split(' ');
+	var s2 = s1[1].split('awsroute53');
+	var alarmMessage = "`"+s2[0]+"`";
 
 	// check subject for condition
 	for (var i=0; i < ALARM_CONFIG.length; i++) {
@@ -52,8 +52,12 @@ exports.handler = function(event, context) {
 		console.log(row);
 		if (subject.match(row.condition)) {
 			console.log("Matched condition: "+row.condition);
-
-			alarmMessage = row.mention+" "+alarmMessage+" ";
+            		if(row.condition=="ALARM")
+			    alarmMessage = row.mention+": "+alarmMessage+" "+" is not responding for the last 5 mins.\n";
+			else if(row.condition=="OK")
+			    alarmMessage = row.mention+": "+alarmMessage+" "+" is up now.\n";
+			else
+			    alarmMessage = alarmMessage;
 			channel = row.channel;
 			severity = row.severity;
 			color = row.color;
@@ -72,14 +76,7 @@ exports.handler = function(event, context) {
 			"fallback": alarmMessage,
 			"text": alarmMessage,
 			"mrkdwn_in": ["text"],
-			"username": "AWS-CloudWatch-Lambda-bot",
-			"fields": [
-				{
-					"title": "Severity",
-					"value": severity,
-					"short": true
-				}
-			],
+			"username": "AWS-CloudWatch",
 			"color": color
 		}
 	],
