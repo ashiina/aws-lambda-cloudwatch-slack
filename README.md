@@ -1,9 +1,10 @@
-# lambda-cloudwatch-slack
-Amazon Lambda to receive alerts from CloudWatch and post to Slack.
+# Coco Slack Alarm
+
+Amazon Lambda that receive alarm notifications from CloudWatch and posts to Slack.
 
 ## What is This?
-It's an Amazon lambda script that receives data from Amazon CloudWatch via, then posts that result over to Slack.
-Just configure the javascript file and set it in Lambda, then you are good to go.
+
+It's an Amazon lambda script that receives data from Amazon CloudWatch via an SNS topic, then posts that result over to Slack. Just configure the JavaScript file and set it in Lambda, then you are good to go.
 
 ## How to Use
 ### Alarm configuration
