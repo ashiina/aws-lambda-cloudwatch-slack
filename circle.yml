@@ -1,6 +1,11 @@
 machine:
   node:
     version: 7.0.0
-test:
-  override:
-    - echo "no tests yet"
+dependencies:
+  pre:
+    - pip install awsebcli
+deployment:
+  production:
+    branch: master
+    commands:
+      - npm run deploy
