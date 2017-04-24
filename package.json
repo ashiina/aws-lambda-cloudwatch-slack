@@ -5,7 +5,8 @@
   "main": "handler.js",
   "scripts": {
     "test": "echo \"Error: no tests yet\"",
-    "deploy": "zip -r build.zip . && aws lambda update-function-code --function-name coco-alarms-slack-production --region eu-west-1 --zip-file fileb://build.zip && rm build.zip"
+    "deploy": "zip -r build.zip . && aws lambda update-function-code --function-name coco-alarms-slack-staging --region eu-west-1 --zip-file fileb://build.zip && rm build.zip",
+    "deploy-production": "zip -r build.zip . && aws lambda update-function-code --function-name coco-alarms-slack-production --region eu-west-1 --zip-file fileb://build.zip && rm build.zip"
   },
   "repository": {
     "type": "git",

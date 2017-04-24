@@ -16,7 +16,7 @@ var ALARM_CONFIG = [
 ];
 
 var SLACK_CONFIG = {
-	path: process.env.SLACK_HOOK,
+	path: process.env.COCO_ALARMS_SLACK_HOOK,
 };
 
 var http = require ('https');

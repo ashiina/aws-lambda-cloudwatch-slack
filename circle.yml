@@ -5,7 +5,11 @@ dependencies:
   pre:
     - pip install awsebcli
 deployment:
-  production:
+  staging:
     branch: master
     commands:
       - npm run deploy
+  production:
+    tag: /release-.*/
+    commands:
+      - npm run deploy-production
