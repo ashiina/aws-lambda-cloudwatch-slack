@@ -8,7 +8,7 @@ The following environment variables need to be set:
 
 | name | description |
 |:-----------|:------------|
-| SLACK_HOOK | The hook URL for your Slack [Incoming Webhook integration](https://api.slack.com/incoming-webhooks). Something like `https://hooks.slack.com/{path}`. |
+| COCO_ALARMS_SLACK_HOOK | The hook URL for your Slack [Incoming Webhook integration](https://api.slack.com/incoming-webhooks). Something like `https://hooks.slack.com/{path}`. |
 
 ## Deployment
 
