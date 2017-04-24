@@ -12,4 +12,6 @@ The following environment variables need to be set:
 
 ## Deployment
 
-To deploy a new version of this, merge to master.
+* To deploy to staging, commit and push your changes. Your changes will automatically be applied by CircleCI once merged to master.
+
+* To deploy to production, create a new release either through GitHub, or via the command line: `git tag release-[name]` then `git push origin release-[name]`
