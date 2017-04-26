@@ -1,6 +1,6 @@
-# Coco Slack Alarm
+# Cloudwatch Slack Alarms
 
-An Amazon Lambda that receive alarm notifications for Coco from CloudWatch and posts to Slack. Based on [this](https://github.com/ashiina/aws-lambda-cloudwatch-slack). This depends on an SNS topic called `coco-alarms`, to which Cloudwatch notifications are posted.
+An Amazon Lambda that receive alarm notifications from CloudWatch and posts to Slack. Based on [this](https://github.com/ashiina/aws-lambda-cloudwatch-slack). This listens to an SNS topic called `alarms-production` (or `alarms-staging`), to which Cloudwatch notifications are posted.
 
 ## Environment Variables
 
