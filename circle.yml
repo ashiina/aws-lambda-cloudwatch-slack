@@ -1,0 +1,15 @@
+machine:
+  node:
+    version: 7.0.0
+dependencies:
+  pre:
+    - pip install awsebcli
+deployment:
+  staging:
+    branch: master
+    commands:
+      - npm run deploy
+  production:
+    tag: /release-.*/
+    commands:
+      - npm run deploy-production
