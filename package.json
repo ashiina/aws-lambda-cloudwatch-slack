@@ -1,21 +1,21 @@
 {
-  "name": "cloudwatch-slack-alarms",
+  "name": "cloudwatch-alarms-slack",
   "version": "1.0.0",
-  "description": "An Amazon Lambda that receive alarm notifications for Coco from CloudWatch and posts to Slack.",
+  "description": "An Amazon Lambda that receives alarm notifications from CloudWatch and posts to Slack.",
   "main": "handler.js",
   "scripts": {
     "test": "echo \"Error: no tests yet\"",
-    "deploy": "zip -r build.zip . && aws lambda update-function-code --function-name coco-alarms-slack-staging --region eu-west-1 --zip-file fileb://build.zip && rm build.zip",
-    "deploy-production": "zip -r build.zip . && aws lambda update-function-code --function-name coco-alarms-slack-production --region eu-west-1 --zip-file fileb://build.zip && rm build.zip"
+    "deploy": "zip -r build.zip . && aws lambda update-function-code --function-name cloudwatch-alarms-slack-staging --region eu-west-1 --zip-file fileb://build.zip && rm build.zip",
+    "deploy-production": "zip -r build.zip . && aws lambda update-function-code --function-name cloudwatch-alarms-slack-production --region eu-west-1 --zip-file fileb://build.zip && rm build.zip"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/conde-nast-international/coco-alarms-slack.git"
+    "url": "git+https://github.com/conde-nast-international/cloudwatch-alarms-slack.git"
   },
   "author": "conde-nast-international",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/conde-nast-international/coco-alarms-slack/issues"
+    "url": "https://github.com/conde-nast-international/cloudwatch-alarms-slack/issues"
   },
-  "homepage": "https://github.com/conde-nast-international/coco-alarms-slack#readme"
+  "homepage": "https://github.com/conde-nast-international/cloudwatch-alarms-slack#readme"
 }
