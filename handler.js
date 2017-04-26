@@ -1,14 +1,14 @@
 var ALARM_CONFIG = [
 	{
 		condition: "INFO",
-		channel: "coco-alarms",
+		channel: "alarms",
 		mention: " ",
 		color: "#FF9F21",
 		severity: ":information_desk_person:"
 	},
 	{
 		condition: "CRITICAL",
-		channel: "coco-alarms",
+		channel: "alarms",
 		mention: "<@channel> ",
 		color: "#F35A00",
 		severity: ":skull_and_crossbones:"
@@ -16,7 +16,7 @@ var ALARM_CONFIG = [
 ];
 
 var SLACK_CONFIG = {
-	path: process.env.SLACK_HOOK,
+	path: process.env.CLOUDWATCH_ALARMS_SLACK_HOOK,
 };
 
 var http = require ('https');

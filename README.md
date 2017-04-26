@@ -1,6 +1,6 @@
-# Coco Slack Alarm
+# Cloudwatch Slack Alarms
 
-An Amazon Lambda that receive alarm notifications for Coco from CloudWatch and posts to Slack. Based on [this](https://github.com/ashiina/aws-lambda-cloudwatch-slack). This depends on an SNS topic called `coco-alarms`, to which Cloudwatch notifications are posted.
+An Amazon Lambda that receive alarm notifications from CloudWatch and posts to Slack. Based on [this](https://github.com/ashiina/aws-lambda-cloudwatch-slack). This listens to an SNS topic called `cloudwatch-alarms-production` (or `cloudwatch-alarms-staging`), to which Cloudwatch alarm notifications are posted.
 
 ## Environment Variables
 
@@ -8,4 +8,10 @@ The following environment variables need to be set:
 
 | name | description |
 |:-----------|:------------|
-| SLACK_HOOK | The hook URL for your Slack [Incoming Webhook integration](https://api.slack.com/incoming-webhooks). Something like `https://hooks.slack.com/{path}`. |
+| CLOUDWATCH_ALARMS_SLACK_HOOK | The hook URL for your Slack [Incoming Webhook integration](https://api.slack.com/incoming-webhooks). Something like `https://hooks.slack.com/{path}`. |
+
+## Deployment
+
+* To deploy to staging, commit and push your changes. Your changes will automatically be applied by CircleCI once merged to master.
+
+* To deploy to production, create a new release either through GitHub, or via the command line: `git tag release-[name]` then `git push origin release-[name]`
