@@ -1,6 +1,6 @@
 # Cloudwatch Slack Alarms
 
-An Amazon Lambda that receive alarm notifications from CloudWatch and posts to Slack. Based on [this](https://github.com/ashiina/aws-lambda-cloudwatch-slack). This listens to an SNS topic called `cloudwatch-alarms-production` (or `cloudwatch-alarms-staging`), to which Cloudwatch alarms notifications are posted.
+An Amazon Lambda that receive alarm notifications from CloudWatch and posts to Slack. Based on [this](https://github.com/ashiina/aws-lambda-cloudwatch-slack). This listens to an SNS topic called `cloudwatch-alarms-production` (or `cloudwatch-alarms-staging`), to which Cloudwatch alarm notifications are posted.
 
 ## Environment Variables
 
